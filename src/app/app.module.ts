@@ -16,7 +16,11 @@ import { DishService } from './services/dish.service';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { AppRoutingModule } from './app-routing/app-routing.module'; 
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component'; 
+import { PromotionService } from './services/promotion.service';
+import { LeaderService } from './services/leader.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,9 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     DishdetailComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +44,11 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FlexLayoutModule,
     AppRoutingModule
   ],
-  providers: [DishService],
+  providers: [
+    DishService,
+    PromotionService,
+    LeaderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
