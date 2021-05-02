@@ -21,6 +21,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component'; 
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
 
 @NgModule({
   declarations: [
@@ -42,12 +44,14 @@ import { LeaderService } from './services/leader.service';
     MatCardModule,
     MatButtonModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     DishService,
     PromotionService,
-    LeaderService
+    LeaderService,
+    {provide: 'BaseURL', useValue: baseURL}
   ],
   bootstrap: [AppComponent]
 })
